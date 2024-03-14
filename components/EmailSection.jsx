@@ -71,7 +71,7 @@ const EmailSection = () => {
 
     setIsPending(true);
     const response = await fetch(
-      `https://portfolio-page-three-indol.vercel.app/api/send`,
+      `https://https://portfolio-page-marcela-maria-skrbins-projects.vercel.app/api/send`,
       options
     );
     const resData = await response.json();
