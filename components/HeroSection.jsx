@@ -25,12 +25,14 @@ const HeroSection = () => {
     const link = document.createElement("a");
     if (language === "de") {
       url += "de.pdf";
+      link.download = `CV_Marcela-Maria_Skrbin_${language}.pdf`; // Specify the filename here
     } else if (language === "fr") {
       url += "fr.pdf";
+      link.download = `CV_Marcela-Maria_Skrbin_${language}.pdf`; // Specify the filename here
     } else {
       url += "en.pdf";
+      link.download = `CV_Marcela-Maria_Skrbin_${language}.pdf`; // Specify the filename here
     }
-    link.download = `CV_Marcela-Maria_Skrbin_${language}.pdf`; // Specify the filename here
     link.href = url;
     link.target = "_blank"; // Add target="_blank" to open in a new tab
     link.click();
