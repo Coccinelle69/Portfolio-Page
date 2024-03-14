@@ -9,8 +9,9 @@ const myEmail = process.env.FROM_EMAIL;
 const templateId = process.env.TEMPLATE_ID;
 
 export async function POST(req, res) {
-  const { emailClient, subject, message, name } = await req.json();
-  console.log(emailClient, subject, message, name);
+  const { emailClient, subject, message, name, lastName, phone } =
+    await req.json();
+  console.log(emailClient, subject, message, name, lastName, phone);
   try {
     const emailData = {
       personalizations: [
@@ -82,6 +83,8 @@ export async function POST(req, res) {
     } else {
       const newUser = await new User({
         name,
+        lastName,
+        phone,
         email: emailClient,
         message: [newMessage],
       }).save();

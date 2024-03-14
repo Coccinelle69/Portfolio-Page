@@ -23,6 +23,8 @@
   "master": "Master en Finance",
   "bachelor": "Licence Niveau 6, titre : Chef de Projet - Développeur d'Applications Web et Mobiles",
   "name": "Votre nom",
+  "lastName": "Votre nom de famille",
+  "phone": "Votre numéro de téléphone",
   "email": "Votre email",
   "subject": "Sujet",
   "message": "Message",

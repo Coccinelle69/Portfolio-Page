@@ -7,11 +7,10 @@ const messageSchema = new mongoose.Schema({
 });
 
 const userSchema = new mongoose.Schema({
-  //   firstName: String,
-  //   lastName: String,
   name: String,
+  lastName: String,
   email: String,
-  //   phoneNumber: String,
+  phone: String,
   message: [messageSchema],
 });
 

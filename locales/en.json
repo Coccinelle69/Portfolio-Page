@@ -23,6 +23,8 @@
   "master": "Master's degree in Finance",
   "bachelor": "Bachelor's degree, title: Project Manager - Developer of Web and Mobile Applications",
   "name": "Your name",
+  "lastName": "Your last name",
+  "phone": "Your phone number",
   "email": "Your email",
   "subject": "Subject",
   "message": "Message",

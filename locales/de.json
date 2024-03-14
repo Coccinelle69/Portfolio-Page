@@ -23,6 +23,8 @@
   "master": "Master-Abschluss in Finanzwirtschaft",
   "bachelor": "Bachelor-Abschluss, Titel: Projektmanager - Entwickler von Web- und Mobilanwendungen",
   "name": "Ihr Name",
+  "lastName": "Ihr Nachname",
+  "phone": "Ihre Telefonnummer",
   "email": "Ihre E-Mail",
   "subject": "Betreff",
   "message": "Nachricht",

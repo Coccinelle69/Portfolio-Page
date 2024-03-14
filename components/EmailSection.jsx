@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import GithubIcon from "../public/assets/github-icon.svg";
-import Link from "next/link";
 import Image from "next/image";
 import { useTranslation } from "next-i18next";
 import { useSelector } from "react-redux";
@@ -23,7 +22,9 @@ const EmailSection = () => {
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const [inputFields, setInputFields] = useState({
     name: "",
+    lastName: "",
     email: "",
+    phone: "",
     subject: "",
     message: "",
   });
@@ -36,9 +37,21 @@ const EmailSection = () => {
       setError(t("error"));
       return;
     }
+    if (
+      !inputFields.email ||
+      !inputFields.name ||
+      !inputFields.lastName ||
+      !inputFields.message ||
+      !inputFields.phone ||
+      !inputFields.subject
+    ) {
+      return;
+    }
     const data = {
       name: inputFields.name,
+      lastName: inputFields.lastName,
       emailClient: inputFields.email,
+      phone: inputFields.phone,
       subject: inputFields.subject,
       message: inputFields.message,
     };
@@ -70,7 +83,9 @@ const EmailSection = () => {
     setIsPending(false);
     setInputFields({
       name: "",
+      lastName: "",
       email: "",
+      phone: "",
       subject: "",
       message: "",
     });
@@ -94,44 +109,91 @@ const EmailSection = () => {
       </div>
       <div>
         <form className="flex flex-col" onSubmit={handleSubmit}>
-          <div className="mb-6">
-            <label
-              htmlFor="name"
-              className="text-white block mb-2 text-sm font-medium"
-            >
-              {t("name")}
-            </label>
-            <input
-              name="name"
-              type="text"
-              id="name"
-              required
-              className="bg-[#18191E] border mb-4 border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-              placeholder="John Doe"
-              value={inputFields.name}
-              onChange={(e) =>
-                setInputFields({ ...inputFields, name: e.target.value })
-              }
-            />
-            <label
-              htmlFor="email"
-              className="text-white block mb-2 text-sm font-medium"
-            >
-              {t("email")}
-            </label>
-            <input
-              name="email"
-              type="email"
-              id="email"
-              required
-              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-              placeholder="john@google.com"
-              value={inputFields.email}
-              onChange={(e) =>
-                setInputFields({ ...inputFields, email: e.target.value })
-              }
-            />
+          <div className="flex flex-wrap -mx-3 mb-6">
+            <div className="w-full md:w-1/2 px-3">
+              <label
+                htmlFor="name"
+                className="text-white block mb-2 text-sm font-medium"
+              >
+                {t("name")}
+              </label>
+              <input
+                name="name"
+                type="text"
+                id="name"
+                required
+                className="bg-[#18191E] border mb-4 border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+                placeholder="John"
+                value={inputFields.name}
+                onChange={(e) =>
+                  setInputFields({ ...inputFields, name: e.target.value })
+                }
+              />
+            </div>
+            <div className="w-full md:w-1/2 px-3">
+              <label
+                htmlFor="lastName"
+                className="text-white block mb-2 text-sm font-medium"
+              >
+                {t("lastName")}
+              </label>
+              <input
+                name="lastName"
+                type="text"
+                id="lastName"
+                required
+                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+                placeholder="Doe"
+                value={inputFields.lastName}
+                onChange={(e) =>
+                  setInputFields({ ...inputFields, lastName: e.target.value })
+                }
+              />
+            </div>
           </div>
+          <div className="flex flex-wrap -mx-3 mb-6">
+            <div className="w-full md:w-1/2 px-3">
+              <label
+                htmlFor="email"
+                className="text-white block mb-2 text-sm font-medium"
+              >
+                {t("email")}
+              </label>
+              <input
+                name="email"
+                type="email"
+                id="email"
+                required
+                className="bg-[#18191E] border mb-4 border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+                placeholder="john.doe@gmail.com"
+                value={inputFields.email}
+                onChange={(e) =>
+                  setInputFields({ ...inputFields, email: e.target.value })
+                }
+              />
+            </div>
+            <div className="w-full md:w-1/2 px-3">
+              <label
+                htmlFor="phone"
+                className="text-white block mb-2 text-sm font-medium"
+              >
+                {t("phone")}
+              </label>
+              <input
+                name="phone"
+                type="tel"
+                id="phone"
+                required
+                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+                placeholder="+33712345678"
+                value={inputFields.phone}
+                onChange={(e) =>
+                  setInputFields({ ...inputFields, phone: e.target.value })
+                }
+              />
+            </div>
+          </div>
+
           <div className="mb-6">
             <label
               htmlFor="subject"
@@ -183,7 +245,6 @@ const EmailSection = () => {
               visible={true}
               height="64"
               width="64"
-              // color="grey"
               strokeColor="grey"
               strokeWidth="5"
               animationDuration="0.75"
