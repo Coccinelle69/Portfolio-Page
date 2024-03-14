@@ -57,7 +57,10 @@ const EmailSection = () => {
     };
 
     setIsPending(true);
-    const response = await fetch(`http://localhost:3000/api/send`, options);
+    const response = await fetch(
+      `https://portfolio-page-three-indol.vercel.app/api/send`,
+      options
+    );
     const resData = await response.json();
 
     if (response.status === 200) {
