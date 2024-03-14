@@ -89,9 +89,7 @@ const EmailSection = () => {
         </h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">{t("connectText")}</p>
         <div className="socials flex flex-row gap-2">
-          <Link href="github.com">
-            <Image src={GithubIcon} alt="Github Icon" />
-          </Link>
+          <Image src={GithubIcon} alt="Github Icon" />
         </div>
       </div>
       <div>

@@ -22,6 +22,7 @@ const HeroSection = () => {
 
   const handleDownload = () => {
     let url = "/cvs/";
+    const link = document.createElement("a");
     if (language === "de") {
       url += "de.pdf";
     } else if (language === "fr") {
@@ -29,9 +30,8 @@ const HeroSection = () => {
     } else {
       url += "en.pdf";
     }
-    const link = document.createElement("a");
-    link.href = url;
     link.download = `CV_Marcela-Maria_Skrbin_${language}.pdf`; // Specify the filename here
+    link.href = url;
     link.target = "_blank"; // Add target="_blank" to open in a new tab
     link.click();
   };
