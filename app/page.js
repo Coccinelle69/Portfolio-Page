@@ -18,6 +18,11 @@ const store = configureStore({
 export default function Home() {
   const [mobileWidth, setMobileWidth] = useState(false);
 
+  let windowWidth;
+  if (typeof window !== "undefined") {
+    windowWidth = window.innerWidth;
+  }
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 768) {
@@ -37,7 +42,7 @@ export default function Home() {
         window.removeEventListener("resize", handleResize);
       }
     };
-  }, [window.innerWidth]);
+  }, [windowWidth]);
   return (
     <Provider store={store}>
       {!mobileWidth && <AnimCursor />}
