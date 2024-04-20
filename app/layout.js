@@ -8,7 +8,7 @@ export const metadata = {
   keywords:
     "portfolio, React, JavaScript, junior, web development, Node, Express, fullstack",
   icons: {
-    icon: "../public/favicon.ico",
+    icon: "/favicon.ico",
   },
   description:
     "Welcome to my portfolio. I am a fullstack junior developer looking for new opportunities. Feel free to look around and contact should you have any questions!",
