@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import NavBar from "@/components/NavBar";
 import ProjectsSection from "@/components/ProjectsSection";
+import AnimCursor from "@/components/AnimCursor";
 
 const store = configureStore({
   reducer: { language },
@@ -16,6 +17,7 @@ const store = configureStore({
 export default function Home() {
   return (
     <Provider store={store}>
+      <AnimCursor />
       <main className="flex min-h-screen flex-col bg-[#221c25] ">
         <NavBar />
         <div className="container mt-24 mx-auto px-12 py-4">

@@ -17,6 +17,7 @@
 }
 
 body {
+  cursor: none;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -24,6 +25,47 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+body:hover {
+  cursor: none;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  background-color: transparent;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #221c25;
+  /* border-radius: 10px; */
+  background-color: #221c25;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #a855f7;
+  border-radius: 10px;
+  height: 15px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #501b82;
+}
+
+video::-webkit-media-controls {
+  cursor: none;
+}
+
+video::-webkit-media-controls-play-button,
+video::-webkit-media-controls-volume-slider,
+video::-webkit-media-controls-current-time-display,
+video::-webkit-media-controls-timeline,
+video::-webkit-media-controls-seek-back-button,
+video::-webkit-media-controls-seek-forward-button {
+  cursor: none;
 }
 
 @layer utilities {

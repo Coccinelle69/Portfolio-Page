@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
@@ -10,12 +10,49 @@ import { useSelector } from "react-redux";
 
 const NavBar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const navBarRef = useRef(null);
   const { t } = useTranslation();
   const language = useSelector((state) => state.language.value);
 
   useEffect(() => {
     i18next.changeLanguage(language);
   }, [language]);
+
+  useEffect(() => {
+    // Function to handle click events
+    function handleClickOutside(event) {
+      if (navBarRef.current && !navBarRef.current.contains(event.target)) {
+        setNavbarOpen(false);
+      }
+    }
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [navbarOpen]);
+
+  let windowWidth;
+  let windowHeight;
+  if (typeof window !== "undefined") {
+    // Access the window object here, as it is safe to do so
+    windowWidth = window.innerWidth;
+    windowHeight = window.innerHeight;
+    // Your code using window...
+  } else {
+    // Handle the case when not in the browser (server-side)
+    console.log("Not running in the browser");
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", () => setNavbarOpen(false));
+
+    return () => {
+      window.removeEventListener("resize", () => setNavbarOpen(false));
+    };
+  }, [windowWidth, windowHeight]);
+
   const navLinks = [
     {
       title: t("headerAbout"),
@@ -32,7 +69,10 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10  bg-[#221c25] bg-opacity-100">
+    <nav
+      ref={navBarRef}
+      className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10  bg-[#221c25] bg-opacity-100"
+    >
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2 bg-[#221c25] z-10 ">
         <Link
           href="/"
