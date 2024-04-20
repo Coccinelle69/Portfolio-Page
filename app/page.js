@@ -16,7 +16,7 @@ const store = configureStore({
 });
 
 export default function Home() {
-  const [mobileWidth, setMobileWidth] = useState(false);
+  const [mobileWidth, setMobileWidth] = useState();
 
   let windowWidth;
   if (typeof window !== "undefined") {
