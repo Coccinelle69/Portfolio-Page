@@ -17,6 +17,7 @@ const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState("");
+  const [errorEmpty, setErrorEmpty] = useState("");
 
   const EMAIL_REGEX =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -33,7 +34,7 @@ const EmailSection = () => {
     e.preventDefault();
     setEmailSubmitted(false);
     setError("");
-    if (!EMAIL_REGEX.test(inputFields.email)) {
+    if (!EMAIL_REGEX.test(inputFields.email) && inputFields.email) {
       setError(t("error"));
       return;
     }
@@ -45,6 +46,7 @@ const EmailSection = () => {
       !inputFields.phone ||
       !inputFields.subject
     ) {
+      setErrorEmpty(t("errorEmpty"));
       return;
     }
     const data = {
@@ -91,6 +93,7 @@ const EmailSection = () => {
       message: "",
     });
     setError("");
+    setErrorEmpty("");
   };
 
   useEffect(() => {
@@ -141,9 +144,10 @@ const EmailSection = () => {
                 className="bg-[#18191E] border mb-4 border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
                 placeholder="John"
                 value={inputFields.name}
-                onChange={(e) =>
-                  setInputFields({ ...inputFields, name: e.target.value })
-                }
+                onChange={(e) => {
+                  setInputFields({ ...inputFields, name: e.target.value });
+                  setError(""), setErrorEmpty("");
+                }}
               />
             </div>
             <div className="w-full md:w-1/2 px-3">
@@ -161,9 +165,10 @@ const EmailSection = () => {
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
                 placeholder="Doe"
                 value={inputFields.lastName}
-                onChange={(e) =>
-                  setInputFields({ ...inputFields, lastName: e.target.value })
-                }
+                onChange={(e) => {
+                  setInputFields({ ...inputFields, lastName: e.target.value });
+                  setError(""), setErrorEmpty("");
+                }}
               />
             </div>
           </div>
@@ -183,9 +188,10 @@ const EmailSection = () => {
                 className="bg-[#18191E] border mb-4 border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
                 placeholder="john.doe@gmail.com"
                 value={inputFields.email}
-                onChange={(e) =>
-                  setInputFields({ ...inputFields, email: e.target.value })
-                }
+                onChange={(e) => {
+                  setInputFields({ ...inputFields, email: e.target.value });
+                  setError(""), setErrorEmpty("");
+                }}
               />
             </div>
             <div className="w-full md:w-1/2 px-3">
@@ -203,9 +209,10 @@ const EmailSection = () => {
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
                 placeholder="+33712345678"
                 value={inputFields.phone}
-                onChange={(e) =>
-                  setInputFields({ ...inputFields, phone: e.target.value })
-                }
+                onChange={(e) => {
+                  setInputFields({ ...inputFields, phone: e.target.value });
+                  setError(""), setErrorEmpty("");
+                }}
               />
             </div>
           </div>
@@ -225,9 +232,11 @@ const EmailSection = () => {
               className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
               placeholder={t("sayingHi")}
               value={inputFields.subject}
-              onChange={(e) =>
-                setInputFields({ ...inputFields, subject: e.target.value })
-              }
+              onChange={(e) => {
+                setInputFields({ ...inputFields, subject: e.target.value }),
+                  setError(""),
+                  setErrorEmpty("");
+              }}
             />
           </div>
           <div className="mb-6">
@@ -240,12 +249,15 @@ const EmailSection = () => {
             <textarea
               name="message"
               id="message"
+              // required
               className="bg-[#18191E] resize-none border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
               placeholder={t("talk")}
               value={inputFields.message}
-              onChange={(e) =>
-                setInputFields({ ...inputFields, message: e.target.value })
-              }
+              onChange={(e) => {
+                setInputFields({ ...inputFields, message: e.target.value }),
+                  setError(""),
+                  setErrorEmpty("");
+              }}
             />
           </div>
           <button
@@ -271,7 +283,10 @@ const EmailSection = () => {
         {emailSubmitted && (
           <p className="text-green-500 text-sm mt-2">{t("success")}</p>
         )}
-        {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+        {error && <p className="text-red-500 text-sm mt-2">{t("error")}</p>}
+        {errorEmpty && (
+          <p className="text-red-500 text-sm mt-2">{t("errorEmpty")}</p>
+        )}
       </div>
     </section>
   );

@@ -30,6 +30,8 @@
   "message": "Message",
   "success": "E-mail envoyé avec succès !",
   "error": "Veuillez saisir une adresse email valide !",
+  "errorEmpty": "Merci de remplir tous les champs !",
+
   "send": "Envoyer le Message",
   "sayingHi": "Juste dire bonjour",
   "talk": "Parlons de...",
