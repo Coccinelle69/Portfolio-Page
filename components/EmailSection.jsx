@@ -72,6 +72,7 @@ const EmailSection = () => {
     setIsPending(true);
     const response = await fetch(
       `https://portfolio-page-marcela-maria-skrbins-projects.vercel.app/api/send`,
+      // `http://localhost:3000/api/send`,
       options
     );
     const resData = await response.json();
@@ -91,6 +92,21 @@ const EmailSection = () => {
     });
     setError("");
   };
+
+  useEffect(() => {
+    let intervalId;
+    if (emailSubmitted) {
+      intervalId = setInterval(() => {
+        setEmailSubmitted(false);
+      }, 5000);
+    }
+
+    return () => {
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
+    };
+  }, [emailSubmitted]);
 
   return (
     <section

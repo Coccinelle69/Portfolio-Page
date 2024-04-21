@@ -27,13 +27,14 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-body:hover {
+/* body:hover {
   cursor: none;
-}
+} */
 
 ::-webkit-scrollbar {
   width: 15px;
   background-color: transparent;
+  z-index: 0;
 }
 
 /* Track */
@@ -41,6 +42,7 @@ body:hover {
   box-shadow: inset 0 0 5px #221c25;
   /* border-radius: 10px; */
   background-color: #221c25;
+  z-index: 0;
 }
 
 /* Handle */
@@ -48,6 +50,7 @@ body:hover {
   background: #a855f7;
   border-radius: 10px;
   height: 15px;
+  z-index: 0;
 }
 
 /* Handle on hover */
