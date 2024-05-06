@@ -8,6 +8,7 @@ import i18next from "@/locales/i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { changeLanguage } from "@/reducers/language";
 import Button from "./Button";
+import styles from "@/styles/hero.module.css";
 
 const HeroSection = () => {
   const dispatch = useDispatch();

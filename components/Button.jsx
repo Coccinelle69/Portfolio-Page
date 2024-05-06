@@ -8,7 +8,10 @@ const Button = ({ children, onChange, langAbr }) => {
       className={styles.button}
       onClick={() => onChange(langAbr)}
     >
-      {children}
+      <span className={styles.buttonText}>
+        {children}
+        <span className={styles.reflection}></span>
+      </span>
     </button>
   );
 };
