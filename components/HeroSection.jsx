@@ -22,7 +22,7 @@ const HeroSection = () => {
   };
 
   const handleDownload = () => {
-    let url = "/cvs/CV_Marcela-Maria_Skrbin_";
+    let url = "/cvs/CV__Marcela-Maria_Skrbin_";
     const link = document.createElement("a");
     if (language === "de") {
       url += "de.pdf";
