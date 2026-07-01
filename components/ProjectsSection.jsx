@@ -42,7 +42,7 @@ const ProjectsSection = () => {
       id: 2,
       title: "Aurora Admin Demo",
       description: t("project7description"),
-      video: "/assets/admin.png",
+      video: "/assets/admin.jpg",
       thumbnail: null,
       tag: ["All", "Web"],
       gitUrl: "https://demo.aurora-apartment-skrbin.hr/admin/demo",
