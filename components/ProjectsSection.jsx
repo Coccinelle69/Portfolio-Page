@@ -84,24 +84,24 @@ const ProjectsSection = () => {
     //   tag: ["All", "Web"],
     //   gitUrl: "https://github.com/Coccinelle69/Hangman",
     // },
-    // {
-    //   id: 7,
-    //   title: "Pusher Chat",
-    //   description: t("project4description"),
-    //   video: "/videos/PusherChat.mp4",
-    //   thumbnail: null,
-    //   tag: ["All", "Web"],
-    //   gitUrl: "https://github.com/Coccinelle69/Pusher-Chat",
-    // },
-    // {
-    //   id: 8,
-    //   title: "Autocomplete",
-    //   description: t("project5description"),
-    //   video: "/videos/Autocomplete.mp4",
-    //   thumbnail: null,
-    //   tag: ["All", "Mobile"],
-    //   gitUrl: "https://github.com/Coccinelle69/Autocomplete",
-    // },
+    {
+      id: 6,
+      title: "Pusher Chat",
+      description: t("project4description"),
+      video: "/videos/PusherChat.mp4",
+      thumbnail: null,
+      tag: ["All", "Web"],
+      gitUrl: "https://github.com/Coccinelle69/Pusher-Chat",
+    },
+    {
+      id: 7,
+      title: "Autocomplete",
+      description: t("project5description"),
+      video: "/videos/Autocomplete.mp4",
+      thumbnail: null,
+      tag: ["All", "Mobile"],
+      gitUrl: "https://github.com/Coccinelle69/Autocomplete",
+    },
   ];
 
   const filteredProjects = projectsData.filter((project) =>
