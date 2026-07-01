@@ -28,12 +28,16 @@ const AboutSection = () => {
       id: "skills",
       content: (
         <ul className="list-disc pl-2">
-          <li>JavaScript</li>
-          <li>React</li>
-          <li>NextJs</li>
+          <li>Java / Spring Boot</li>
+          <li>GraphQL & WebSockets</li>
+          <li>Next.js / React / TypeScript</li>
+          <li>PostgreSQL / MongoDB / Redis</li>
+          <li>Stripe (payments & payouts)</li>
+          <li>Docker / GitHub Actions CI/CD</li>
+          <li>OAuth2 / TOTP 2FA</li>
+          <li>Node.js / Express</li>
+          <li>k6 / JUnit / TDD</li>
           <li>React Native</li>
-          <li>TypeScript</li>
-          <li>Node.js</li>
           <li>Express</li>
           <li>Mongoose</li>
           <li>TDD</li>

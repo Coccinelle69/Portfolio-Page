@@ -1,6 +1,6 @@
 {
   "introduction": "Hallo, ich bin ",
-  "web": "Webentwicklerin",
+  "web": "Fintech Fullstack-Ingenieurin",
   "mobile": "Mobile-Entwicklerin",
   "headerLogo": "Mein Portfolio",
   "headerAbout": "Über mich",
@@ -45,5 +45,8 @@
   "project2description": "App zur Auswahl von Zugtickets, erstellt mit reinem JavaScript, Express und Mongoose",
   "project3description": "Wortratespiel, erstellt mit reinem JavaScript",
   "project4description": "Chat-Komponente erstellt mit dem Webdienst Pusher - Gruppenprojekt in Bearbeitung",
-  "project5description": "App zur Berechnung der Entfernung zwischen Ihrem Standort und einer ausgewählten französischen Stadt, erstellt mit React Native"
+  "project5description": "App zur Berechnung der Entfernung zwischen Ihrem Standort und einer ausgewählten französischen Stadt, erstellt mit React Native",
+  "project6description": "Aurora Gästeportal für Buchungen mit Echtzeit-Stripe-Zahlungen, erstellt mit Next.js und GraphQL",
+  "project7description": "Aurora Admin-Dashboard für Reservierungen, Zahlungen, Rückerstattungen und Eigentümerauszahlungen, erstellt mit Next.js, Spring Boot und Stripe",
+  "project8description": "Öffentliche Aurora-Diagnoseseite mit Echtzeit-Performance-Metriken und Production-Lasttests, erstellt mit Next.js und Prometheus"
 }

@@ -1,6 +1,6 @@
 {
   "introduction": "Bonjour, je suis ",
-  "web": "Développeuse Web",
+  "web": "Ingénieure Fullstack Fintech",
   "mobile": "Développeuse Mobile",
   "headerLogo": "Mon Portfolio",
   "headerAbout": "À mon propos",
@@ -46,5 +46,8 @@
   "project2description": "Application de choix de billets de train, réalisée avec JavaScript, Express et Mongoose",
   "project3description": "Jeu de devinette de mots, réalisé avec JavaScript",
   "project4description": "Composant de chat réalisé avec le service web Pusher - projet de groupe en cours",
-  "project5description": "Application qui calcule la distance entre votre position et une ville française sélectionnée, réalisée avec React Native"
+  "project5description": "Application qui calcule la distance entre votre position et une ville française sélectionnée, réalisée avec React Native",
+  "project6description": "Portail client Aurora pour réservations d'appartement avec paiements Stripe en temps réel, réalisé avec Next.js et GraphQL",
+  "project7description": "Tableau de bord admin Aurora avec gestion des réservations, paiements, remboursements et virements propriétaire, réalisé avec Next.js, Spring Boot et Stripe",
+  "project8description": "Page de diagnostics publique Aurora avec métriques de performance et tests de charge en production, réalisée avec Next.js et Prometheus"
 }

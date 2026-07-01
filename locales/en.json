@@ -1,6 +1,6 @@
 {
   "introduction": "Hello, I'm ",
-  "web": "Web Developer",
+  "web": "Fintech Fullstack Engineer",
   "mobile": "Mobile Developer",
   "headerLogo": "My Portfolio",
   "headerAbout": "About me",
@@ -45,5 +45,8 @@
   "project2description": "App for choosing train tickets, made with vanilla JavaScript, Express, Mongoose",
   "project3description": "Guess the word game, made with vanilla JavaScript",
   "project4description": "Chat component made with webservice Pusher - group project in progress",
-  "project5description": "App that calculates distance between your position and picked French city, made with React Native"
+  "project5description": "App that calculates distance between your position and picked French city, made with React Native",
+  "project6description": "Aurora guest booking portal with real-time Stripe payments, built with Next.js and GraphQL",
+  "project7description": "Aurora admin dashboard managing reservations, payments, refunds and owner payouts, built with Next.js, Spring Boot and Stripe",
+  "project8description": "Aurora public diagnostics page with live performance metrics and production load testing, built with Next.js and Prometheus"
 }

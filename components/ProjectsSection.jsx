@@ -31,49 +31,81 @@ const ProjectsSection = () => {
   const projectsData = [
     {
       id: 1,
+      title: "Aurora Client Demo",
+      description: t("project6description"),
+      video: null,
+      thumbnail: "/assets/aurora.png",
+      tag: ["All", "Web"],
+      gitUrl: "https://demo.aurora-apartment-skrbin.hr/demo",
+    },
+    {
+      id: 2,
+      title: "Aurora Admin Demo",
+      description: t("project7description"),
+      video: "/assets/admin.png",
+      thumbnail: null,
+      tag: ["All", "Web"],
+      gitUrl: "https://demo.aurora-apartment-skrbin.hr/admin/demo",
+    },
+    {
+      id: 3,
+      title: "Aurora Diagnostics",
+      description: t("project8description"),
+      video: null,
+      thumbnail: "/assets/diagnostics.png",
+      tag: ["All", "Web"],
+      gitUrl: "https://aurora-apartment-skrbin.hr/diagnostics",
+    },
+    {
+      id: 4,
       title: "Hackatweet",
       description: t("project1description"),
       video: "/videos/Hackatweet.mp4",
+      thumbnail: null,
       tag: ["All", "Web"],
       gitUrl: "https://github.com/Coccinelle69/Hackatweet",
     },
 
     {
-      id: 2,
+      id: 5,
       title: "Tickethack",
       description: t("project2description"),
       video: "/videos/Tickethack.mp4",
+      thumbnail: null,
       tag: ["All", "Web"],
       gitUrl: "https://github.com/Coccinelle69/Tickethack",
     },
-    {
-      id: 3,
-      title: "Hangman",
-      description: t("project3description"),
-      video: "/videos/Hangman.mp4",
-      tag: ["All", "Web"],
-      gitUrl: "https://github.com/Coccinelle69/Hangman",
-    },
-    {
-      id: 4,
-      title: "Pusher Chat",
-      description: t("project4description"),
-      video: "/videos/PusherChat.mp4",
-      tag: ["All", "Web"],
-      gitUrl: "https://github.com/Coccinelle69/Pusher-Chat",
-    },
-    {
-      id: 5,
-      title: "Autocomplete",
-      description: t("project5description"),
-      video: "/videos/Autocomplete.mp4",
-      tag: ["All", "Mobile"],
-      gitUrl: "https://github.com/Coccinelle69/Autocomplete",
-    },
+    // {
+    //   id: 6,
+    //   title: "Hangman",
+    //   description: t("project3description"),
+    //   video: "/videos/Hangman.mp4",
+    //   thumbnail: null,
+    //   tag: ["All", "Web"],
+    //   gitUrl: "https://github.com/Coccinelle69/Hangman",
+    // },
+    // {
+    //   id: 7,
+    //   title: "Pusher Chat",
+    //   description: t("project4description"),
+    //   video: "/videos/PusherChat.mp4",
+    //   thumbnail: null,
+    //   tag: ["All", "Web"],
+    //   gitUrl: "https://github.com/Coccinelle69/Pusher-Chat",
+    // },
+    // {
+    //   id: 8,
+    //   title: "Autocomplete",
+    //   description: t("project5description"),
+    //   video: "/videos/Autocomplete.mp4",
+    //   thumbnail: null,
+    //   tag: ["All", "Mobile"],
+    //   gitUrl: "https://github.com/Coccinelle69/Autocomplete",
+    // },
   ];
 
   const filteredProjects = projectsData.filter((project) =>
-    project.tag.includes(tag)
+    project.tag.includes(tag),
   );
   return (
     <section id="projects">
@@ -112,7 +144,7 @@ const ProjectsSection = () => {
               description={project.description}
               video={project.video}
               gitUrl={project.gitUrl}
-              previewUrl={project.previewUrl}
+              thumbnail={project.thumbnail}
             />
           </motion.li>
         ))}
